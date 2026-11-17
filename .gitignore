@@ -55,3 +55,5 @@ uploads/*
 # Generated data (review before ignoring)
 data/processed/
 data/interim/
+
+processed_data/

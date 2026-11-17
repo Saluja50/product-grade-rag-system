@@ -18,22 +18,25 @@ class Settings:
     GROQ_MODEL = "llama-3.3-70b-versatile"
     GROQ_FALLBACK_API_KEY = os.getenv("GROQ_FALLBACK_API_KEY")
 
-    # --- LLM GATEWAY (PORTKEY) ---
-    # PORTKEY_API_KEY = os.getenv("PORTKEY_API_KEY")
-    # GROQ_SLUG =  "rag"     # primary: @rag/llama-3.3-70b-versatile
-    # GROQ_SLUG_2 = "brag"  # fallback: @brag/llama-3.1-8b-instant
+    # --- LLM GATEWAY (LITELLM) ---
+    LITELLM_API_KEY = os.getenv("LITELLM_API_KEY")
+    LITELLM_BASE_URL = os.getenv(
+        "LITELLM_BASE_URL",
+        "https://enterprise-rag-litellm-gateway.onrender.com/v1"
+    )
+    LITELLM_MODEL = "rag-primary"
 
     
     # --- OBSERVABILITY ---
-    # LANGSMITH_TRACING = os.getenv("LANGSMITH_TRACING", "true")
-    # LANGSMITH_API_KEY = os.getenv("LANGSMITH_API_KEY")
-    # LANGSMITH_PROJECT = os.getenv("LANGSMITH_PROJECT", "rag_scale_test")
-    # LANGSMITH_ENDPOINT = os.getenv("LANGSMITH_ENDPOINT", "https://api.smith.langchain.com")
+    LANGSMITH_TRACING = os.getenv("LANGSMITH_TRACING", "true")
+    LANGSMITH_API_KEY = os.getenv("LANGSMITH_API_KEY")
+    LANGSMITH_PROJECT = os.getenv("LANGSMITH_PROJECT", "rag_scale_test")
+    LANGSMITH_ENDPOINT = os.getenv("LANGSMITH_ENDPOINT", "https://api.smith.langchain.com")
 
 # Apply LangChain environment variables for automatic tracing
-# os.environ["LANGCHAIN_TRACING_V2"] = os.getenv("LANGSMITH_TRACING", "true")
-# os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGSMITH_API_KEY", "")
-# os.environ["LANGCHAIN_PROJECT"] = os.getenv("LANGSMITH_PROJECT", "rag_scale_test")
-# os.environ["LANGCHAIN_ENDPOINT"] = os.getenv("LANGSMITH_ENDPOINT", "https://api.smith.langchain.com")
+os.environ["LANGCHAIN_TRACING_V2"] = os.getenv("LANGSMITH_TRACING", "true")
+os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGSMITH_API_KEY", "")
+os.environ["LANGCHAIN_PROJECT"] = os.getenv("LANGSMITH_PROJECT", "rag_scale_test")
+os.environ["LANGCHAIN_ENDPOINT"] = os.getenv("LANGSMITH_ENDPOINT", "https://api.smith.langchain.com")
 
 settings = Settings()

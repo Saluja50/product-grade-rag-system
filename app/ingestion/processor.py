@@ -3,6 +3,8 @@ import sys
 import uuid
 import json
 import logfire
+# from dotenv import load_dotenv
+# load_dotenv(".env", override=True)
 
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
