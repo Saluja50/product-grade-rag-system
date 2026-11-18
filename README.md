@@ -100,6 +100,16 @@ flowchart TD
 
 **Note:** The application uses separate deployments for the frontend, backend, and LLM gateway.
 
+
+## 📸 Application Screenshots
+
+### Application Interface
+![Application Interface](docs/screenshots/app-demo.png)
+
+### RAG Response Generation
+![RAG Response Generation](docs/screenshots/rag-response.png)
+
+
 ## 📂 Project Structure
 
 ```text
