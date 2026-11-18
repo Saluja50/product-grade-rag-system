@@ -1,7 +1,14 @@
 # ==============================================================================
 # ENTERPRISE AGENTIC RAG - REQUIREMENTS (Local, No GCP)
 # ==============================================================================
-
+langchain==1.5.0
+langchain-core==1.8.1
+langgraph==1.2.22
+langchain-google-genai==4.4.3
+langchain-google-vertexai==3.3.0
+langchain-community==0.4.2
+langchain-openai==1.8.0
+langchain-nvidia-ai-endpoints==1.5.0
 # --- CORE API & WEB FRAMEWORK ---
 fastapi                     # High-performance web framework for the API
 uvicorn[standard]           # ASGI server to run the FastAPI app
@@ -14,19 +21,19 @@ nest-asyncio                # Support for nested async loops in notebooks/stream
 
 # --- GEMINI EMBEDDINGS ---
 google-generativeai         # Gemini API — embeddings (text-embedding-004 / gemini-embedding-001)
-langchain-google-genai      # LangChain integration for Gemini models
+# langchain-google-genai      # LangChain integration for Gemini models
 
 # --- VECTOR DB & RETRIEVAL ---
 qdrant-client               # Vector Database for semantic search
 flashrank                   # Ultra-fast local cross-encoder for semantic reranking
 
 # --- LANGCHAIN & AGENTIC ORCHESTRATION ---
-langchain                   # Core LLM orchestration
-langgraph                   # State-machine logic for cyclic agent flows
-# langchain-groq              # Integration for lightning-fast Llama 3.3 models
-langchain-google-vertexai   # Required shim for NeMo Guardrails internal import (no GCP credentials needed)
-langchain-community         # Community-contributed tools and loaders
-langchain-openai            # OpenAI-compatible layer (used by Portkey gateway)
+# langchain                   # Core LLM orchestration
+# langgraph                   # State-machine logic for cyclic agent flows
+# # langchain-groq              # Integration for lightning-fast Llama 3.3 models
+# langchain-google-vertexai   # Required shim for NeMo Guardrails internal import (no GCP credentials needed)
+# langchain-community         # Community-contributed tools and loaders
+# langchain-openai            # OpenAI-compatible layer (used by Portkey gateway)
 pydantic>=2.0.0             # Data validation and settings management
 
 # --- DATA INGESTION & DOCUMENT PARSING ---
@@ -44,7 +51,7 @@ loguru                      # Enhanced logging for Python
 
 # --- GUARDRAILS ---
 nemoguardrails              # NVIDIA NeMo Guardrails for input/output safety rails
-langchain-nvidia-ai-endpoints # LangChain integration with NVIDIA AI Endpoints
+# langchain-nvidia-ai-endpoints # LangChain integration with NVIDIA AI Endpoints
 
 # --- LLM GATEWAY ---
 # portkey-ai                  # Portkey Gateway for unified LLM routing, fallbacks & observability
